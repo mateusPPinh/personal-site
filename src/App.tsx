@@ -1,6 +1,14 @@
+import { ThemeProvider } from "styled-components";
+import { HeaderComponent } from "./components/Header";
+import Home from "./pages/Home";
+import {defaultTheme} from './theme/theme'
+
 const App = () => {
   return(
-    <div />
+    <ThemeProvider theme={defaultTheme}>
+      <HeaderComponent />
+      <Home />
+    </ThemeProvider>
   )
 }
 
