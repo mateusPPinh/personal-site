@@ -4,21 +4,14 @@ const Header = styled.header`
   width: 100%;
   align-items: center;
   /* background-color: ${({ theme }) => theme.colors.background}; */
-  padding: 35px 190px;
+  padding: 40px;
 `;
 
 const LeftCenterContainer = styled.div`
   display: flex;
   justify-content: space-between;
-
-  ul {
-    display: flex;
-
-    li {
-      margin-right: 30px;
-    }
-  }
 `;
+
 const RightCenterContainer = styled.div`
   display: flex;
   align-items: center;
@@ -31,11 +24,10 @@ const RightCenterContainer = styled.div`
 const Tile = styled.div`
 
 `;
-const MediumButton = styled.div`
 
-`;
-const ToggleThemeButton = styled.div`
-
+const Button = styled.button`
+  border: 0;
+  background-color: transparent;
 `;
 
 export { 
@@ -43,6 +35,5 @@ export {
   LeftCenterContainer,
   RightCenterContainer,
   Tile,
-  MediumButton,
-  ToggleThemeButton
+  Button,
  };

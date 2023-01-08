@@ -5,22 +5,26 @@ import {
   LeftCenterContainer,
   RightCenterContainer,
   Tile,
-  MediumButton,
+  Button,
 } from './styles'
-// import { IHeaderProps } from './types';
+import {FiMoon, FiSun} from 'react-icons/fi'
 
-export const HeaderComponent = () => {
+interface IHeaderProps {
+  isDarkTheme?: boolean;
+  isLightTheme?: boolean;
+  toggleTheme?: () => void;
+}
+
+export const HeaderComponent = ({isDarkTheme, isLightTheme, toggleTheme}: IHeaderProps) => {
   return (
     <Header>
     <LeftCenterContainer>
-      <Tile><b>.m</b>ateus</Tile>
-      <ul>
-        <li>Home</li>
-        <li>Contact</li>
-      </ul>
+      <Tile><b>.m</b>ateus.dev</Tile>
       <RightCenterContainer>
-        <ToggleThemeComponent isLightTheme={true} />
-        <MediumButton>Medium</MediumButton>
+        <Button onClick={toggleTheme}>
+        {isDarkTheme && <FiMoon size={20} color='#4C2C69' onClick={toggleTheme} />}
+        {isLightTheme && <FiSun size={24} color='#FFC857' onClick={toggleTheme} />}
+      </Button>
       </RightCenterContainer>
     </LeftCenterContainer>
     </Header>
